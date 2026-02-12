@@ -107,7 +107,16 @@
        # -- storage class for event tailer pvc
        accessModes:
          - ReadWriteOnce
-@@ -309,14 +308,164 @@
+@@ -280,6 +279,8 @@
+       imagePullSecrets: []
+     # -- workloadMetaOverrides of HostTailer
+     workloadMetaOverrides:
++      annotations:
++      labels:
+     # -- workloadOverrides of HostTailer
+     workloadOverrides:
+     # -- configure fileTailers of HostTailer
+@@ -309,14 +310,164 @@
    image: fluent/fluent-bit
    pullPolicy: IfNotPresent
    port: 8080
@@ -280,7 +289,7 @@
  
  # -- Extra manifests to deploy as an array
  extraManifests: []
-@@ -327,3 +476,12 @@
+@@ -327,3 +478,12 @@
    #     name: extra-manifest
    #   data:
    #     extra-data: "value"
